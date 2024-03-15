@@ -6,9 +6,7 @@ require '../private/conn.php';
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = 'SELECT id, Wachtwoord, usertype FROM users WHERE email = :email';
-    $sth = $dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-    $sth->execute(array(':email' => $email));
+  
 
     $matchingUsers = $sth->fetchAll(PDO::FETCH_ASSOC);
 
